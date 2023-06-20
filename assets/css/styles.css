@@ -37,9 +37,8 @@
   box-shadow: 0 200px 300px hsla(var(--hue), 100%, 40%, .25);
   border: solid black;
   border-color: black;
-  float:left; 
   height: 450px;
-  width: 800px
+  width: 800px;
 }
 
 .comic-date {
