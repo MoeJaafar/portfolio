@@ -1,18 +1,18 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close')
 // Menu Show
-if(navToggle){
-    navToggle.addEventListener('click',()=>{
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
 
         navMenu.classList.add('show-menu')
     })
 }
 // Menu Hidden
-if(navClose){
-    navClose.addEventListener('click',()=>{
-            navMenu.classList.remove('show-menu')
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show-menu')
     })
 }
 
@@ -22,58 +22,58 @@ if(navClose){
 
 
 const navLink = document.querySelectorAll('.nav__link')
-const linkAction = () =>{
+const linkAction = () => {
 
-const navMenu = document.getElementById('nav-menu')
-// When we click on each nav__link, we remove the show-men 
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-men 
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== ADD BLUR TO HEADER ===============*/
-const blurHeader = () =>{
+const blurHeader = () => {
     const header = document.getElementById('header')
     //When the scroll is bigger than 50 add scroll-header class to header tag
     this.scrollY >= 50 ? header.classList.add('blur-header')
-                        : header.classList.remove('blur-header')
+        : header.classList.remove('blur-header')
 
 }
 window.addEventListener('scroll', blurHeader)
 
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
-        contactMessage = document.getElementById('contact-message')
+    contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) =>{
+const sendEmail = (e) => {
     e.preventDefault()
 
     // serviceID - templateID - #form - publicKey
     emailjs.sendForm('service_zgt4b6g', 'template_qigalm6', '#contact-form', 'ILKxVK2iCeJ8U0FkJ')
-    .then(() =>{
-    contactMessage.textContent = 'Message sent successfully ✅'
+        .then(() => {
+            contactMessage.textContent = 'Message sent successfully ✅'
 
-    setTimeout(() =>{
-        contactMessage.textContent = ''
-        
-    }, 5000)
-        //clear input after sending
-        contactForm.reset()
+            setTimeout(() => {
+                contactMessage.textContent = ''
 
-    }, () =>{
+            }, 5000)
+            //clear input after sending
+            contactForm.reset()
 
-        contactMessage.textContent = 'Message not sent (service error) ❌'
-    
-    })
+        }, () => {
+
+            contactMessage.textContent = 'Message not sent (service error) ❌'
+
+        })
 }
 
 contactForm.addEventListener('submit', sendEmail)
 
-/*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () =>{
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
     // when scroll is higher than 350 add show-scroll class to the a tag with scrolling up
     this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                                            :scrollUp.classList.remove('show-scroll')
+        : scrollUp.classList.remove('show-scroll')
 
 }
 window.addEventListener('scroll', scrollUp)
@@ -81,20 +81,20 @@ window.addEventListener('scroll', scrollUp)
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
 
-const scrollActive = () =>{
+const scrollActive = () => {
     const scrollY = window.pageYOffset
 
-    sections.forEach(current =>{
+    sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
-                sectionTop = current.offsetTop - 58,
-                sectionId = current.getAttribute('id'),
-                sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + "]")
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + "]")
 
-            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-                sectionsClass.classList.add('active-link')
-            }else{
-                sectionsClass.classList.remove('active-link')
-            }
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link')
+        } else {
+            sectionsClass.classList.remove('active-link')
+        }
     })
 }
 window.addEventListener('scroll', scrollActive)
@@ -109,6 +109,6 @@ const sr = ScrollReveal({
 
 })
 sr.reveal('.home__data, .home__social, .contact__container, .footer__container')
-sr.reveal('.home__image', {origin: 'bottom'})
-sr.reveal('.about__data, .skills__data', {origin: 'left'})
-sr.reveal('.services__card, .projects__card', {interval: '100'})
+sr.reveal('.home__image', { origin: 'bottom' })
+sr.reveal('.about__data, .skills__data', { origin: 'left' })
+sr.reveal('.services__card, .projects__card', { interval: '100' })
