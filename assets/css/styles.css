@@ -2,12 +2,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 /*=============== Homework2 ===============*/
+@import url('https://fonts.cdnfonts.com/css/comics');
 
 #comic-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
 }
+
+.comic-title {
+  font-size: 44px;
+  margin-top: 10px;
+  color: var(--first-color);
+  font-family: 'Comics', sans-serif;
+  transform: rotate(4deg);
+
+  
+  
+  
+  
+}
+
+.comic-image {
+  margin-top: 50px;
+  max-width: 100%;
+  box-shadow: 0 50px 100px hsla(var(--hue), 100%, 40%, .25);
+  transform: rotate(-2deg);
+  border: solid black;
+  border-color: black;
+  float:left; 
+}
+
+.comic-date {
+  font-size: 16px;
+  color: var(--first-color);
+  font-family: 'Comics', sans-serif;                                     
+}
+
+
 
 
 /*=============== VARIABLES CSS ===============*/
