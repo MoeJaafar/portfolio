@@ -21,15 +21,22 @@ function displayComic(comicData) {
     img.alt = comicData.alt;
     img.className = 'comic-image';
 
+    const alt = document.createElement("h2");
+    alt.textContent = comicData.alt;
+    alt.className = 'comic-alt';
+
     const date = new Date(comicData.year, comicData.month - 1, comicData.day);
     const dateElement = document.createElement("h2");
     dateElement.textContent = date.toLocaleDateString();
     dateElement.className = 'comic-date';
-
+    
 
     container.appendChild(img);
+    container.appendChild(alt);
     container.appendChild(title);
     container.appendChild(dateElement);
+    
+
 }
 
 
