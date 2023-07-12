@@ -10,6 +10,7 @@
   let comicData;
 
   onMount(async () => {
+  try {
     const email = new URLSearchParams();
     email.append('email', 'm.jaafar@innopolis.university');
 
@@ -18,7 +19,11 @@
 
     const response = await fetch('https://fwd.innopolis.university/api/comic?id=' + data);
     comicData = await response.json();
-  });
+  } catch (error) {
+    console.error("Error fetching data: ", error);
+  }
+});
+
 
   function formatDate(date) {
     return dayjs().set('year', parseInt(date.year)).set('month', parseInt(date.month) - 1).set('date', parseInt(date.day)).fromNow();
@@ -39,17 +44,19 @@
 
   
   <style>
+    
     /*=============== GOOGLE FONTS ===============*/
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
   
   /*=============== Homework2 ===============*/
   @import url('https://fonts.cdnfonts.com/css/comics');
   
-  #comic-container {
+  .comic-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
   
   
   }
@@ -86,7 +93,6 @@
   border-color: black;
   height: 450px;
   width: 800px;
-  margin-left: 250px;
   }
   
   .comic-date {
