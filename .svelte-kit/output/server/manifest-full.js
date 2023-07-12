@@ -10,7 +10,7 @@ return {
 	assets: new Set([".nojekyll","favicon.png"]),
 	mimeTypes: {".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.ef173ed2.js","app":"_app/immutable/entry/app.b857895b.js","imports":["_app/immutable/entry/start.ef173ed2.js","_app/immutable/chunks/index.472b9089.js","_app/immutable/chunks/singletons.717cf266.js","_app/immutable/entry/app.b857895b.js","_app/immutable/chunks/index.472b9089.js"],"stylesheets":[],"fonts":[]},
+		client: {"start":"_app/immutable/entry/start.eda9ce1d.js","app":"_app/immutable/entry/app.08b50f1e.js","imports":["_app/immutable/entry/start.eda9ce1d.js","_app/immutable/chunks/index.472b9089.js","_app/immutable/chunks/singletons.4a871d8c.js","_app/immutable/entry/app.08b50f1e.js","_app/immutable/chunks/index.472b9089.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),

@@ -3,16 +3,11 @@
     // No import needed for navigation
   </script>
   
-  <header>
-    <nav>
-      <a href="/">Home</a> |
-      <a href="/comic">Comic</a>
-    </nav>
-  </header>
+    
+  <Header />
   
-  <slot></slot>
+  <slot><+page /></slot>
   
-  <footer>
-    <p>© 2023. All Rights Reserved.</p>
-  </footer>
+  <Footer />
+    
   
