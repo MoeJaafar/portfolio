@@ -1,12 +1,13 @@
 <script>
   import { onMount } from 'svelte';
-
+  import Header from '../components/Header.svelte';
+  import Footer from '../components/Footer.svelte';
   import dayjs from 'dayjs';
   import relativeTime from 'dayjs/plugin/relativeTime';
 
   dayjs.extend(relativeTime);
 
-
+    
   let comicData;
 
   onMount(async () => {
@@ -29,7 +30,7 @@
     return dayjs().set('year', parseInt(date.year)).set('month', parseInt(date.month) - 1).set('date', parseInt(date.day)).fromNow();
   }
 </script>
-
+<Header pageTitle="Moe" />
 {#if comicData}
   <div class="comic-container">
     <img src={comicData.img} alt={comicData.alt} class="comic-image" />
@@ -42,26 +43,32 @@
   </div>
 {/if}
 
+<Footer />
   
   <style>
     
-    /*=============== GOOGLE FONTS ===============*/
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-  
-  /*=============== Homework2 ===============*/
-  @import url('https://fonts.cdnfonts.com/css/comics');
-  
-  .comic-container {
+   /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== Homework2 ===============*/
+@import url('https://fonts.cdnfonts.com/css/comics');
+
+body {
+  margin: 0;
+}
+
+
+.comic-container {
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   
-  
-  
-  }
-  
-  .comic-title {
+
+}
+
+.comic-title {
   font-size: 27px;
   -webkit-text-stroke: 0.5px white; 
   margin-top: 5px;
@@ -69,23 +76,23 @@
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   margin-bottom: 5px;
   text-align: center;
-  
-  }
-  
-  .comic-alt{
+
+}
+
+.comic-alt{
   font-size: 16px;
   color: var(--first-color);
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   margin-top: 10px;   
   align-items: center;
   text-align: center;
+
   
+
   
-  
-  
-  }
-  
-  .comic-image {
+}
+
+.comic-image {
   margin-top: 50px;
   max-width: 100%;
   box-shadow: 0 200px 300px hsla(var(--hue), 100%, 40%, .25);
@@ -93,14 +100,31 @@
   border-color: black;
   height: 450px;
   width: 800px;
-  }
-  
-  .comic-date {
+}
+
+.comic-date {
   font-size: 16px;
   color: var(--first-color);
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   text-align: center;
-  
-  }
-  
+
+}
+
+
+
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+
+  --hue: 291 ;
+  --first-color: hsl(var(--hue), 47%, 51%);
+  --first-color-alt: hsl(var(--hue), 56%, 35%);
+  --title-color: hsl(228, 8%, 95%);
+  --text-color: hsl(228, 8%, 65%);
+  --body-color: hsl(228, 15%, 20%);
+  --container-color: hsl(228, 15%, 15%);
+}
   </style>
