@@ -1,4 +1,4 @@
-import { c as create_ssr_component, d as add_attribute, e as escape } from "../../chunks/index.js";
+import { c as create_ssr_component } from "../../chunks/index.js";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime.js";
 const _page_svelte_svelte_type_style_lang = "";
@@ -8,26 +8,8 @@ const css = {
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   dayjs.extend(relativeTime);
-  let comicData;
-  onMount(async () => {
-    const email = new URLSearchParams();
-    email.append("email", "m.jaafar@innopolis.university");
-    const identifier = await fetch("https://fwd.innopolis.app/api/hw2?" + email.toString());
-    const data = await identifier.json();
-    const response = await fetch("https://fwd.innopolis.university/api/comic?id=" + data);
-    comicData = await response.json();
-  });
-  function formatDate(date) {
-    return dayjs().set("year", parseInt(date.year)).set("month", parseInt(date.month) - 1).set("date", parseInt(date.day)).fromNow();
-  }
   $$result.css.add(css);
-  return `${comicData ? `<div class="comic-container"><img${add_attribute("src", comicData.img, 0)}${add_attribute("alt", comicData.alt, 0)} class="comic-image svelte-16gp47h">
-
-    <h2 class="comic-title svelte-16gp47h">${escape(comicData.safe_title)}</h2>
-
-    <p class="comic-alt svelte-16gp47h">${escape(comicData.alt)}</p>
-
-    <p class="comic-date svelte-16gp47h">${escape(formatDate(comicData))}</p></div>` : ``}`;
+  return `${``}`;
 });
 export {
   Page as default
