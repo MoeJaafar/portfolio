@@ -53,9 +53,7 @@
 /*=============== Homework2 ===============*/
 @import url('https://fonts.cdnfonts.com/css/comics');
 
-body {
-  margin: 0;
-}
+
 
 
 .comic-container {

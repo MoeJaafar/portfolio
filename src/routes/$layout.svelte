@@ -6,7 +6,7 @@
     
   <Header />
   
-  <slot><+page /></slot>
+  <slot></slot>
   
   <Footer />
     

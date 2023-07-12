@@ -1,12 +1,12 @@
 <script>
-    export let pageTitle; // Pass the page title as a prop to the header component
+    export pageTitle; // Pass the page title as a prop to the header component
   </script>
   
   <header>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about">{pageTitle}</a></li>
         <li><a href="/contact">Contact</a></li>
     </ul>
     </nav>
