@@ -1,7 +1,8 @@
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import adapter from 'svelte-adapter-github';
+import adapter from '@sveltejs/adapter-static';
 
+const dev = process.env.NODE_ENV === 'development';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -11,22 +12,15 @@ const __dirname = dirname(__filename);
 const config = {
   kit: {
     adapter: adapter({
-      // default options are shown. On some platforms
-      // these options are set automatically — see below
-      pages: 'docs',
-      assets: 'docs',
-      fallback: null,
-      precompress: false,
-      fallback: null,
-      domain: '',
-      jekyll: false
+      fallback: 'index.html'
     })
+    
+    // other kit options
   },
   
-  
   paths: {
-	base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-	assets: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+    base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+    assets: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
   }, 
   
 };
