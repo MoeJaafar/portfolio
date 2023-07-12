@@ -7,22 +7,18 @@ const dev = process.env.NODE_ENV === 'development';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
     adapter: adapter({
       fallback: 'index.html'
-    })
-    
+    }),
     // other kit options
-  },
-  
-  paths: {
-    base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-    assets: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-  }, 
-  
+    paths: {
+      base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+      assets: process.env.NODE_ENV === 'production' ? 'https://moejaafar.github.io/portfolio' : '',
+    },
+  }
 };
 
 export default config;

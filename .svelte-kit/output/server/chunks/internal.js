@@ -1,6 +1,6 @@
 import { c as create_ssr_component, a as setContext, v as validate_component, m as missing_component } from "./index.js";
-let base = "";
-let assets = base;
+let base = "/portfolio";
+let assets = "https://moejaafar.github.io/portfolio";
 const initial = { base, assets };
 function reset() {
   base = initial.base;
@@ -171,7 +171,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1b63tjt"
+  version_hash: "3vjph3"
 };
 function get_hooks() {
   return {};
