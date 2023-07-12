@@ -1,14 +1,18 @@
 <script>
-    export pageTitle; // Pass the page title as a prop to the header component
+    function handleAboutClick(event) {
+      event.preventDefault();
+      // Optionally, you can perform any custom logic here
+      // without navigating to a different page
+    }
   </script>
   
   <header>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about">{pageTitle}</a></li>
-        <li><a href="/contact">Contact</a></li>
-    </ul>
+        <li><a href="/about" on:click={handleAboutClick}>About</a></li>
+        <li><a href="/contact" on:click={handleAboutClick}>Contact</a></li>
+      </ul>
     </nav>
   </header>
   
