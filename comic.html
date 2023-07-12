@@ -19,12 +19,21 @@
 </head>
 
 <body>
-  <main>
-    <div id="image" class="comic-container">
-      <!-- comic comes here -->
-    </div>
-  </main>
-  <script src="dist/bundle.js"></script>
+    <main>
+      <div id="app"></div>
+    </main>
+  
+  <script>
+    async function loadApp() {
+      const { default: App } = await import('./dist/App.js');
+      new App({
+        target: document.getElementById('app')
+      });
+    }
+    loadApp();
+  </script>
+  
 </body>
+
 
 </html>

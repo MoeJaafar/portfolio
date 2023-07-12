@@ -1,5 +1,8 @@
 # Ignore node modules
 node_modules/
+svelte-app/node_modules
+svelte-app/built
+svelte-app/svelte-kit
 
 # Ignore TypeScript type definitions
 *.d.ts
